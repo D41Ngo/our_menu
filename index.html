@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+		name="viewport">
+	<meta content="ie=edge" http-equiv="X-UA-Compatible">
+	<title>Our Menu</title>
+
+	<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" rel="stylesheet">
+	<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+		integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+		referrerpolicy="no-referrer" rel="stylesheet" />
+</head>
+
+<body>
+	<div class="container">
+		<!-- Heading -->
+		<section class="heading">
+			<!-- css utils: class css mà thư viện đã code sẵn. -->
+			<!-- tailwindcss: thư viện css utils -->
+			<h1 class="text-center">Our Menu</h1>
+			<div style="width:150px;height:4px;background-color: orange; margin:0 auto"></div>
+		</section>
+
+		<!-- Filter -->
+		<section class="filter mt-4">
+			<!-- search -->
+			<div class="input-group mb-3">
+				<input type="text" class="form-control" placeholder="Search food ...">
+				<button class="input-group-text">Search</button>
+			</div>
+
+			<div class="d-flex justify-content-between">
+				<!-- category -->
+				<ul class="nav nav-pills mb-3" id="category-tab">
+				</ul>
+
+				<!-- order -->
+				<ul class="nav nav-pills mb-3" id="order-tab">
+					<!-- <li class="nav-item">
+						<button class="nav-link active" id="order-home-tab" data-bs-toggle="pill"
+							data-bs-target="#order-home" type="button">
+							<span>
+								Price
+							</span>
+							<i class="fa-solid fa-arrow-down"></i>
+						</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" id="order-profile-tab" data-bs-toggle="pill"
+							data-bs-target="#order-profile" type="button">
+							<span>
+								Title
+							</span>
+							<i class="fa-solid fa-arrow-up"></i>
+						</button>
+					</li> -->
+				</ul>
+			</div>
+		</section>
+
+		<!-- List Food -->
+		<section class="list-food">
+			<div class="row" id="list-food">
+			</div>
+		</section>
+	</div>
+
+	<script crossorigin="anonymous" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+	<script type="module" src="./src/index.js"></script>
+</body>
+
+</html>
