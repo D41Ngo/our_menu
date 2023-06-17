@@ -6,6 +6,8 @@ import { renderListOrder } from "./renderListOrder.js";
 // main
 // chạy dự áp ở file này
 renderListFood(menu);
+// nó phải được gắn trước khi thằng khác gọi đến.
+window.renderListFood = renderListFood;
 
 renderListCategory(menu);
 

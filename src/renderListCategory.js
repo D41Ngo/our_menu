@@ -1,3 +1,4 @@
+import { menu } from "./mock-data.js";
 let typeCategory = "all";
 
 const setCategory = (category) => {
@@ -6,9 +7,17 @@ const setCategory = (category) => {
 
 	console.log("[typeCategory]", typeCategory);
 	// 2. render lại giao diện.
+	// renderListFood không import vào.
+	// console.log(window);
+	// window.renderListFood(menu);
 };
-//
 
+// nếu không có type=module; tự động
+// window.setCategory = setCategory;
+// window.a = a;
+
+// thêm thủ công.
+// thuocTinh = giaTri
 window.setCategory = setCategory; // gắn function này cho toàn bộ dự án ở đâu cũng gọi được. đối với type='module' làm như vậy để có thể hoạt động được.
 
 export const renderListCategory = (listFood) => {
