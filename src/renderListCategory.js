@@ -1,15 +1,14 @@
-import { menu } from "./mock-data.js";
-let typeCategory = "all";
+// thực thi: 3
+import { renderUI } from "./index.js";
+
+export let activeCategory = "all";
 
 const setCategory = (category) => {
 	// 1. set lại giá trị loại sản phẩm
-	typeCategory = category;
+	activeCategory = category;
 
-	console.log("[typeCategory]", typeCategory);
 	// 2. render lại giao diện.
-	// renderListFood không import vào.
-	// console.log(window);
-	// window.renderListFood(menu);
+	renderUI();
 };
 
 // nếu không có type=module; tự động
@@ -18,9 +17,17 @@ const setCategory = (category) => {
 
 // thêm thủ công.
 // thuocTinh = giaTri
+// html <=> js window
 window.setCategory = setCategory; // gắn function này cho toàn bộ dự án ở đâu cũng gọi được. đối với type='module' làm như vậy để có thể hoạt động được.
 
-export const renderListCategory = (listFood) => {
+/**
+ * 1. Lấy tất cả category.
+ * 2. render category lên UI.
+ *
+ * - Mỗi function chỉ nên làm một nhiệm vụ duy nhất
+ */
+
+export const getListCategory = (listFood) => {
 	// 1. lấy tất cả những category có trong listFood.
 	const listCategory = [];
 	for (const food of listFood) {
@@ -39,7 +46,14 @@ export const renderListCategory = (listFood) => {
 		// - nếu có rồi thì không làm gì hết
 	}
 
-	// dom
+	return listCategory;
+};
+
+const isActive = (category) => {
+	return category.toLowerCase() === activeCategory.toLowerCase();
+};
+
+export const renderListCategory = (listCategory) => {
 	const boxCategory = document.getElementById("category-tab");
 
 	// listCategory.unshift("all");
@@ -48,7 +62,9 @@ export const renderListCategory = (listFood) => {
 	const contentCategory = ["all", ...listCategory].map((category) => {
 		return `
 		<li class="nav-item">
-			<button onclick="setCategory('${category}')" style="text-transform: capitalize;" class="nav-link" id="category-${category}-tab" data-bs-toggle="pill"
+			<button onclick="setCategory('${category}')" style="text-transform: capitalize;" class="nav-link ${
+			isActive(category) ? "active" : ""
+		}" id="category-${category}-tab" data-bs-toggle="pill"
 				data-bs-target="#category-${category}" type="button">${category}</button>
 		</li>
 		`;

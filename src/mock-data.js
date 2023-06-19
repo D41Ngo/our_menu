@@ -1,4 +1,5 @@
 // export: chia sẻ cho nó có thể dùng ở nhiều nơi khác trong ứng dụng của chúng ta.
+// thực thi bên này 1.
 export const menu = [
 	{
 		id: 1,
@@ -74,5 +75,34 @@ export const menu = [
 	},
 ];
 
+class Es6Order {
+	// constructor: Hàm khởi tạo.
+	constructor(type, active, direction) {
+		this.type = type;
+		this.active = active;
+		this.direction = direction;
+	}
+}
+
 // code trên file html: static => tĩnh.
-export const listOrder = ["price", "title"];
+export const listOrder = [
+	new Es6Order("price", true, "asc"),
+	new Es6Order("title", false, "desc"),
+];
+
+// es5: function constructor
+function Es5Order(type, active, direction) {
+	this.type = type;
+	this.active = active;
+	this.direction = direction;
+}
+
+const listOrderEs5 = [
+	new Es5Order("price", true, "asc"),
+	new Es5Order("title", false, "desc"),
+];
+
+const listOrderEs6 = [
+	new Es6Order("price", true, "asc"),
+	new Es6Order("title", false, "desc"),
+];

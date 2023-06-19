@@ -1,3 +1,4 @@
+// thực thi: 2.
 export const renderListFood = (listFood) => {
 	const boxFood = document.getElementById("list-food");
 	// for lặp qua, để render. lấy được tất cả các card item
